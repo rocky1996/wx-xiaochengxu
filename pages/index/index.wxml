@@ -8,15 +8,17 @@
 </swiper>
 
 <view class='items-list'>
-  <view class='pro-item'>
-    <image class='pro-logo' src='images/fruit.png'></image>
+  <view class='pro-item' wx:for="{{proList}}" bindtap='toDetail' data-index='{{index}}'>
+    <image class='pro-logo' src='{{item.logo}}'></image>
     <view class="pro-body">
-      <view class='pro-title'>房贷标题</view>
-      <text class="pro-desc">房贷内容</text>
+      <view class='pro-title'>{{item.title}}</view>
+      <text class="pro-desc">{{item.desc}}</text>
       <view class='pro-footer'>
         <image class="btn-detail" src='/images/btn-detail.png'></image>
-        <image class="btn-ask" src='/images/btn-detail.png'></image>
+        <button open-type='contact' class="btn-ask"><image src='/images/btn-detail.png'/></button>
       </view>
     </view>
   </view>
 </view>
+
+<button bindtap='copy'>复制内容</button>
